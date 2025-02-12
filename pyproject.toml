@@ -9,6 +9,7 @@ dependencies = [
     "ipykernel>=6.29.5",
     "llama-index>=0.12.16",
     "llama-index-embeddings-huggingface>=0.5.1",
+    "llama-index-llms-gemini>=0.4.10",
     "pandas>=2.2.3",
     "python-dotenv>=1.0.1",
 ]
