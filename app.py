@@ -5,7 +5,12 @@ import time
 def stream_response(sentences):
     for word in sentences.split(" "):
         yield word + " "
-        time.sleep(0.03)
+        time.sleep(0.04)
+
+st.set_page_config(
+        page_title="Paul Graham Essay Chatbot",
+        
+    )
 
 st.title("Welcome to PaulChat 👋")
 
@@ -18,7 +23,7 @@ for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
 
-prompt = st.chat_input("Ask Paul a question")
+prompt = st.chat_input("Ask Paul any question about the essay 💭")
 if prompt:
     # Display user message in chat message container
     with st.chat_message("user"):

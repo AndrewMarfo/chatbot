@@ -36,6 +36,9 @@ Settings.llm = llm
 # Retrieving Context and Generating response
 def ask_question(question):
     query_engine = index.as_query_engine()
-    response = query_engine.query(question)
-    answer = response.response
+    try:
+        response = query_engine.query(question)
+        answer = response.response
+    except Exception as e:
+        answer = "Sorry, I don't know the answer to that question."
     return answer
