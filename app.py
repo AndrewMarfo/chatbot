@@ -28,11 +28,13 @@ if prompt:
     # Display user message in chat message container
     with st.chat_message("user"):
         st.markdown(prompt)
+
     # Add user message to chat history
     st.session_state.messages.append({"role": "user", "content": prompt})
 
     with st.spinner("Generating response..."):
         response = ask_question(prompt)
+
         # Display AI response in chat message container
         with st.chat_message("assistant"):
             st.write_stream(stream_response(response))
